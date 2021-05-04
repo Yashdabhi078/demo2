@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "An Api application",
   "keywords": [],
-  "main": "apicall.js",
   "dependencies": {
     "node-fetch": "^2.3.0"
   }
