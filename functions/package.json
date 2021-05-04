@@ -4,6 +4,9 @@
   "description": "An Api application",
   "keywords": [],
   "dependencies": {
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+  },
+  "scripts": {
+    "apicall": "node apicall.js"
   }
 }
