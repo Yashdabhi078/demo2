@@ -1,5 +1,4 @@
 [build]
-  publish = "site"
   functions = "functions_y"
 
 [[redirects]]
