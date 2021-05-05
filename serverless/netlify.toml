@@ -1,3 +1,8 @@
 [build]
   publish = "site"
-  functions = "lambda"
+  functions = "functions_y"
+
+[[redirects]]
+  from="/api/*"
+  to="/.netlify/functions/:splat"
+  status=200
