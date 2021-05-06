@@ -6,11 +6,17 @@ exports.handler = async (event, context) => {
   
   let response
   try {
-    response = await fetch(body.url,{
-      method: body.type,
-      headers: body.headers,
-      body: JSON.stringify(body.body)
-    })
+    if (body.type == "POST") {
+      response = await fetch(body.url,{
+        method: "POST",
+        headers: body.headers,
+        body: JSON.stringify(body.body)
+      })
+    }
+    else if(body.type == "GET"){
+      response = await fetch(body.url)
+    }
+    
     // handle response
   } catch (err) {
     return {
@@ -20,11 +26,9 @@ exports.handler = async (event, context) => {
       })
     }
   }
-  const y = await response.json()
+  const data = await response.json()
   return {
     statusCode: 200,
-    body: JSON.stringify({
-      data: y
-    })
+    body: JSON.stringify({"body": data})
   }
 }
